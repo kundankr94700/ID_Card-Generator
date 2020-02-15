@@ -41,7 +41,7 @@ def login():
         ss1.set('')
         ss2.set('')
         top1 = Toplevel()
-        top1.title("Student Database")
+        top1.title("ID Card Generator")
 
         f4 = Font(family="Time New Roman", size=13, weight="bold", underline=1)
         f5 = Font(family="Time New Roman", size=16, weight="bold", underline=1)
@@ -49,7 +49,7 @@ def login():
         f7 = Font(family="Time New Roman", size=12)
 
         LL1 = Label(top1, text='Database Operation ', fg='Red', font=f4).place(x=65, y=35)
-        LL2 = Label(top1, text='Student Database Management', fg='Red', font=f5).place(x=450, y=15)
+        LL2 = Label(top1, text='ID Card Generator', fg='Red', font=f5).place(x=450, y=15)
 
         def add(roll, f_name, l_name, fa_name, ma_name, dob, course, sem, batch, mobile, country,
                 Address, marks, image, sign):
@@ -95,7 +95,7 @@ def login():
                     top11.geometry("320x80+600+200")
                     l3 = Label(top11, text="Please Upload Photos And Signature Both .",
                                fg='skyblue', font=f1).place(x=50, y=15)
-                    playsound('Audio\\add11.mp3')
+                    playsound('add11.mp3')
                 else:
 
                     top11 = Toplevel()
@@ -104,7 +104,7 @@ def login():
                     l3 = Label(top11,
                                text="Some Details are Not Entered \n please Fill all the details",
                                fg='skyblue', font=f1).place(x=50, y=15)
-                    playsound('Audio\\add1.mp3')
+                    playsound('add1.mp3')
 
 
             elif yy9.isdigit() == FALSE or len(yy9) != 10 or yy12.isdigit() == False or yy13.isdigit() == False:
@@ -114,7 +114,7 @@ def login():
                     top11.geometry("320x80+600+200")
                     l3 = Label(top11, text="Invalid ROll and Mobile Number.", fg='skyblue',
                                font=f1).place(x=50, y=15)
-                    playsound('Audio\\add2.mp3')
+                    playsound('add2.mp3')
 
 
                 elif yy12.isdigit() == False:
@@ -123,7 +123,7 @@ def login():
                     top11.geometry("320x80+600+200")
                     l3 = Label(top11, text="Invalid Roll Number.", fg='skyblue',
                                font=f1).place(x=80, y=25)
-                    playsound('Audio\\add3.mp3')
+                    playsound('add3.mp3')
 
                 elif yy13.isdigit() == False:
                     top11 = Toplevel()
@@ -131,7 +131,7 @@ def login():
                     top11.geometry("320x80+600+200")
                     l3 = Label(top11, text=" Invalid Marks", fg='skyblue',
                                font=f1).place(x=80, y=25)
-                    playsound('Audio\\add9.mp3')
+                    playsound('add9.mp3')
 
                 else:
                     top11 = Toplevel()
@@ -139,7 +139,7 @@ def login():
                     top11.geometry("320x80+600+200")
                     l3 = Label(top11, text="Invalid  Mobile Number.", fg='skyblue',
                                font=f1).place(x=80, y=25)
-                    playsound('Audio\\add4.mp3')
+                    playsound('add4.mp3')
 
             elif yy1.isalpha() == False or yy2.isalpha() == False or valid(yy3.upper()) == 1 or valid(
                     yy4.upper()) == 1:
@@ -149,7 +149,7 @@ def login():
                 l3 = Label(top11,
                            text="Some Details are Not in Appropriate Format ",
                            fg='skyblue', font=f1).place(x=50, y=15)
-                playsound('Audio\\add8.mp3')
+                playsound('add8.mp3')
 
             else:
                 yyx12 = int(yy12)
@@ -160,7 +160,7 @@ def login():
                     top11.geometry("320x80+600+200")
                     l3 = Label(top11, text=" Marks Greater Then 100 .", fg='skyblue',
                                font=f1).place(x=80, y=25)
-                    playsound('Audio\\add10.mp3')
+                    playsound('add10.mp3')
                 else:
                     v = 1
                     conn = sqlite3.connect('stu_database.sqlite')
@@ -192,9 +192,9 @@ def login():
                         LLL2 = Label(top1, text='Number Of Records : %d ' % z, font=f7,
                                      fg='green').place(
                             x=670, y=360)
-                        playsound('Audio\\add5.mp3')
+                        playsound('add5.mp3')
                     else:
-                        playsound('Audio\\add7.mp3')
+                        playsound('add7.mp3')
 
         def clear():
             aaa = messagebox.askyesno('Clear', 'Do you Want to Clear')
@@ -353,7 +353,7 @@ def login():
                     top8.title("ID Generator ")
                     top8.geometry("350x50+600+300")
                     l = Label(top8, text='Record Not Found', font=f6, fg='red').pack()
-                    playsound('Audio\\record1.mp3')
+                    playsound('record1.mp3')
 
                 top3.destroy()
 
@@ -406,12 +406,12 @@ def login():
 
         o1 = "Message: Please Enter Username and Password"
 
-        playsound('Audio\\sound3.mp3')
+        playsound('sound3.mp3')
         L1 = Label(root, text=o1, font=f3).place(x=130, y=320)
     else:
         o2 = "Please Enter Invalid Username Or Password"
         L2 = Label(root, text=o2, font=f3).place(x=130, y=320)
-        playsound('Audio\\sound4.mp3')
+        playsound('sound4.mp3')
 
 
 def win():
@@ -422,10 +422,7 @@ def win():
 
 p, k = 0, 0
 root = Tk()
-try:
-    mkdir('D:\\student DataBase Management\\ID\\')
-except:
-    pass
+
 f1 = Font(family="Time New Roman", size=13, weight="bold", underline=1)
 f2 = Font(family="Time New Roman", size=15, weight="bold", underline=1)
 f3 = Font(family="Time New Roman", size=10, weight="bold")
